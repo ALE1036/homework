@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>披萨星球</title>
+<style type="text/css">
+
+*{ margin:0; padding:0; list-style:none; text-decoration:none; font:normal 100% Arial,sans-serif; font-size:1em;}
+body{ background:#FFFDEA; }
+
+#header{ position:absolute; top:0px; width:100%; height:13em; background:url(images/aa12.png) no-repeat; background-size:cover; background-position:center;}
+#logo{ position:relative; margin-left:50px; margin-top:20px; width:15%; height:75%; background:url(images/logo03.png) no-repeat; background-size:contain; }
+#item{ position:relative; margin-right:3em; margin-top:-150px; width:25%; height:60%; text-align:right; float:right;}
+#item p{ position:relative; margin-top:2%; color:#fff; font-size:1.2em;  }
+#item p:hover{ color:#CCC;}
+#item a:link,#item a:visited{ color:#FF9;}
+#item a:hover {color:#FC0; text-decoration:underline;}
+
+#nav{ position:absolute; top:4em; width:50%; height:3.8em; left:25%; z-index:4; }
+.nav-list{ width:100%; height:inherit;}
+.nav-list ul{ list-style:none; text-decoration:none; width:90%; height:inherit;}
+.nav-list ul li{ float:left; border:2px solid #F00; width:19%; height:inherit; line-height:3.7em; background-color:transparent; transition:all .5s; cursor:pointer; border-right:none;}
+.nav-list ul li:last-child{ border-right:2px solid #F00; }
+.nav-list a:link,.nav-list a:visited{ color:#FFF;}
+.nav-list ul li:hover{ background-color:#0D0D0D;}
+#on{  background:#0D0D0D;}
+
+#address{ position:absolute; width:100%; height:32em; top:15em;  text-align:center; background:#FFF;}
+#address div{ width:80%; height:80%; margin:1em auto; background:url(images/address.png) no-repeat; border:2px solid #F4F4E1;
+background-size:cover;  }
+#address span{ font-size:1.8em; letter-spacing:5px; color:#333;}
+#address p{ font-size:1.1em; letter-spacing:1px; margin-top:10px; }
+
+#main{ position:absolute; width:100%; height:30em; top:50em; background:#FBFBF4; }
+#main div{ float:left; margin-top:1em;}
+#text { position:relative; width:30%; height:90%; line-height:3em; left:10%; font-size:1.1em; color:#333; letter-spacing:1px; }
+#text span{ font-size:1.8em; letter-spacing:5px; }
+#table{ position:absolute; text-align:center; width:40%; height:90%; right:10%; letter-spacing:1px; font-size:1.1em;  }
+#table input{ width:80%; height:2.5em; border:1px solid #D5D4D4; background-color:transparent; margin-top:20px;}
+#table #cont{  width:80%; height:10em; border:1px solid #D5D4D4; margin-top:20px; resize:none; background-color:transparent;}
+#table #submit{ width:80px; height:40px; background:#1D1D1D; color:#FFF; font-weight:bold; margin-left:75%;
+transition:all .5s; cursor:pointer; border:none; }
+#table #submit:hover{ background:#C69C30; }
+
+
+#bottom{ position:absolute; top:82em; width:100%; background:#000; height:8em;}
+#contend{ position:absolute; width:80%; height:50%; color:#FFF; margin:3em; left:5%; text-align:center; }
+#share{ position:absolute; width:30%; height:50%; color:#FFF; right:.5em; margin-top:3.5em; text-align:center;}
+#cover{ width:100%; height:60%; } 
+#cover ul{ width:80%; height:100%; margin-left:10%; }
+#cover ul li{ float:left; width:20%; height:inherit; cursor:pointer; margin-left:4px;  }
+#back{ position:fixed; width:2.1em; height:2.1em; right:1em; bottom:3%; cursor:pointer;  z-index:99;}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="header">
+<div id="logo"></div>
+<div id="item"><p>披萨的星球<br><a href="login.html">登录</a>或<a href="registered.html">注册</a></p></div>
+</div>
+
+<div id="nav" align="center">
+<div class="nav-list">
+<ul>
+<li><a href="index.html">主页</a></li>
+<li><a href="service.html">服务</a></li>
+<li><a href="menu.html">菜谱</a></li>
+<li><a href="join.html">关于加盟</a></li>
+<li id="on"><a href="contact.html">联系我们</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="address">
+<span>我们店的地址</span>
+<p>还在等什么，赶紧上飞船登录到披萨星球吧。</p>
+<div></div>
+</div>
+
+<div id="main">
+<div id="text"><span>联系我们</span><br>你的每一份意见我们都会及时的进行反馈。<br>
+以下是我们的联系信息：<br>
+Tel:13912341324<br>
+E-mail:mail@user.com<br>
+QQ:1036123123<br>
+</div>
+<div id="table">
+<form action="#" method="post">
+ 姓名：
+ <input type="text" id="name" placeholder="  请输入您的姓名"><br>
+
+邮箱：
+<input type="email" id="email" placeholder="  请输入您的邮箱"><br>
+
+主题：
+<input type="text" id="subject" placeholder="  请输入主题："><br>
+
+内容：
+<textarea name="textarea" id="cont" placeholder="  请输入内容："></textarea>
+
+<input type="submit" id="submit" value="发送" >
+</form>
+</div>
+</div>
+
+<div id="back"><a href="#"><img src="images/back.png"></a></div>
+
+<div id="bottom">
+
+<div id="contend">My_Web © 2016 All rights Reserved | Design by  李家鸿</div>
+
+<div id="share">
+<div id="cover">
+<ul>
+
+<li>
+<a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank">
+<img src="images/sj.png"></a>
+</li> 
+
+<li>
+<a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank">
+<img src="images/tb.png"></a>
+</li> 
+
+<li>
+<a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank">
+<img src="images/wb.png"></a>
+</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>披萨星球</title>
+<style type="text/css">
+
+*{ margin:0; padding:0; list-style:none; text-decoration:none; font:normal 100% Arial,sans-serif; font-size:1em;}
+body{ background:#FFFDEA; }
+
+#header{ position:absolute; top:0px; width:100%; height:13em; background:url(images/aa12.png) no-repeat; background-size:cover; background-position:center;}
+#logo{ position:relative; margin-left:50px; margin-top:20px; width:15%; height:75%; background:url(images/logo03.png) no-repeat; background-size:contain; }
+#item{ position:relative; margin-right:3em; margin-top:-150px; width:25%; height:60%; text-align:right; float:right;}
+#item p{ position:relative; margin-top:2%; color:#fff; font-size:1.2em;  }
+#item p:hover{ color:#CCC;}
+#item a:link,#item a:visited{ color:#FF9;}
+#item a:hover {color:#FC0; text-decoration:underline;}
+
+#nav{ position:absolute; top:4em; width:50%; height:3.8em; left:25%; z-index:4; }
+.nav-list{ width:100%; height:inherit;}
+.nav-list ul{ list-style:none; text-decoration:none; width:90%; height:inherit;}
+.nav-list ul li{ float:left; border:2px solid #F00; width:19%; height:inherit; line-height:3.7em; background-color:transparent; transition:all .5s; cursor:pointer; border-right:none;}
+.nav-list ul li:last-child{ border-right:2px solid #F00; }
+.nav-list a:link,.nav-list a:visited{ color:#FFF;}
+.nav-list ul li:hover{ background-color:#0D0D0D;}
+#on{  background:#0D0D0D;}
+
+
+#statement{ position:absolute; width:100%; height:18em; top:15em; background:url(images/aa8.png) no-repeat;
+background-size:contain; background-position:right;  }
+#text{ width:45%; height:80%; margin:3em; text-align:center; line-height:2em; color:#333; letter-spacing:1px;}
+#text a:link,#text a:visited{ color:#F90;}
+#text a:hover{ text-decoration:underline; }
+#text span{  color:#06F; font-weight:bold; }
+
+#ser_list{ position:absolute; width:100%; height:25em; top:35em; background:rgba(247,247,247,.5); border-radius:8px; }
+#ser_list div{ width:80%; height:80%; margin:3em auto; }
+#ser_list span{ position:absolute; top:2%; left:10%; color:#F60; font-size:2.33em; letter-spacing:4px; }
+#ser_list div ul{ float:left; margin-left:1em; width:30%; height:90%;  margin-top:3%; }
+#ser_list div ul li{ list-style:disc; color:#F60; margin-top:.5em;}
+#ser_list div ul li p{ color:#333; }
+#ser_list a:link,#ser_list a:visited{ color:#333;}
+#ser_list a{transition:all .4s; }
+#ser_list a:hover{ color:#F60; }
+
+#back{ position:fixed; width:2.1em; height:2.1em; right:1em; bottom:3%; cursor:pointer;  z-index:99;}
+
+#bottom{ position:absolute; top:62em; width:100%; background:#000; height:8em;  }
+#contend{ position:absolute; width:80%; height:50%; color:#FFF; margin:3em; left:5%; text-align:center; }
+#share{ position:absolute; width:30%; height:50%; color:#FFF; right:.5em; margin-top:3.5em; text-align:center;}
+#cover{ width:100%; height:60%; } 
+#cover ul{ width:80%; height:100%; margin-left:10%; }
+#cover ul li{ float:left; width:20%; height:inherit; cursor:pointer; margin-left:4px;  }
+</style>
+</head>
+
+<body>
+
+<div id="header">
+<div id="logo"></div>
+<div id="item"><p>披萨的星球<br><a href="login.html">登录</a>或<a href="registered.html">注册</a></p></div>
+</div>
+
+<div id="nav" align="center">
+<div class="nav-list">
+<ul>
+<li><a href="index.html">主页</a></li>
+<li id="on"><a href="service.html">服务</a></li>
+<li><a href="menu.html">菜谱</a></li>
+<li><a href="join.html">关于加盟</a></li>
+<li><a href="contact.html">联系我们</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="statement">
+<div id="text">
+披萨星球餐厅所提供的服务，绝对会令顾客觉得十分满意，我们很乐意为你提供服务，
+如果对我们的服务有意见请点击<a href="contact.html">这里</a>反馈我们，我们一定及时处理。<br>
+<span>最终解释权归披萨星球餐饮公司所有。 </span>
+</div>
+</div>
+
+<div id="ser_list">
+<span>特色服务</span>
+<div>
+
+<ul id="ser1">
+<li><p><a target="_blank" href="ser-single.html">救星护照</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">预订聚餐</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">白金会员</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">外卖订购</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">团购</a></p></li>
+</ul>
+
+<ul id="ser2">
+<li><p><a target="_blank" href="ser-single.html">黄金会员</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">预订位置</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">会员查询</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">服务说明</a></p></li>
+</ul>
+
+<ul id="ser3">
+<li><p><a target="_blank" href="ser-single.html">救星护照</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">预订聚餐</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">白金会员</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">外卖订购</a></p></li>
+<li><p><a target="_blank" href="ser-single.html">团购</a></p></li>
+</ul>
+
+</div>
+</div>
+
+<div id="back"><a href="#"><img src="images/back.png"></a></div>
+
+<div id="bottom">
+
+<div id="contend">My_Web © 2016 All rights Reserved | Design by  李家鸿</div>
+
+<div id="share">
+<div id="cover">
+<ul>
+
+<li>
+<a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank">
+<img src="images/sj.png"></a>
+</li> 
+
+<li>
+<a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank">
+<img src="images/tb.png"></a>
+</li> 
+
+<li>
+<a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank">
+<img src="images/wb.png"></a>
+</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

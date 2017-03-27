@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>披萨星球</title>
+<style type="text/css">
+
+*{ margin:0; padding:0; list-style:none; text-decoration:none; font:normal 100% Arial,sans-serif; font-size:1em;}
+body{ background:#FFF; }
+
+#header{ position:absolute; top:0px; width:100%; height:13em; background:url(images/aa12.png) no-repeat; background-size:cover; background-position:center;}
+#logo{ position:relative; margin-left:50px; margin-top:20px; width:15%; height:75%; background:url(images/logo03.png) no-repeat; background-size:contain; }
+#item{ position:relative; margin-right:3em; margin-top:-150px; width:25%; height:60%; text-align:right; float:right;}
+#item p{ position:relative; margin-top:2%; color:#fff; font-size:1.2em;  }
+#item p:hover{ color:#CCC;}
+#item a:link,#item a:visited{ color:#FF9;}
+#item a:hover {color:#FC0; text-decoration:underline;}
+
+#nav{ position:absolute; top:4em; width:50%; height:3.8em; left:25%; z-index:4; }
+.nav-list{ width:100%; height:inherit;}
+.nav-list ul{ list-style:none; text-decoration:none; width:90%; height:inherit;}
+.nav-list ul li{ float:left; border:2px solid #F00; width:19%; height:inherit; line-height:3.7em; background-color:transparent; transition:all .5s; cursor:pointer; border-right:none;}
+.nav-list ul li:last-child{ border-right:2px solid #F00; }
+.nav-list a:link,.nav-list a:visited{ color:#FFF;}
+.nav-list ul li:hover{ background-color:#0D0D0D;}
+#on{  background:#0D0D0D;}
+
+#main{ position:absolute; width:100%; height:45em; top:15em;background:url(images/bg03.png) no-repeat;
+ background-position:right; background-size:contain; }
+#text{ width:40%; height:20%; margin:3em auto; text-align:center; }
+#text hr{ margin:1em auto; }
+#text span{ font-size:2.1em; letter-spacing:5px; color:#333; }
+#text p{ font-size:1.2em; letter-spacing:3px; color:#838383;}
+#text a{ font-size:14px; font-weight:bolder; letter-spacing:0; }
+#text a:link,#text a:visited{ color:#B89F7A;}
+#text a:hover {color:#CDCF72;}
+
+#login{ width:60%; height:60%; margin:2em auto; background:#f2f2f2;  }
+#login form{ position:relative; top:2em; margin:0 auto;  width:50%; height:90%; color:#4E4E4E4E;}
+#item01{ width:100%; height:20%; margin:1.5em auto; letter-spacing:2px; }
+#item01 #contain,#contain1{ width:inherit; height:50%; background:#FFF; border:1px solid #EBEBEB; margin-top:.5em; z-index:2; }
+#item01 a{ font-size:14px; font-weight:bolder; letter-spacing:0; }
+#item01 a:link,#item01 a:visited{ color:#B89F7A;}
+#item01 a:hover {color:#CDCF72;}	
+#contain input,#contain1 input{ width:95%; height:100%; border:none; background-color:transparent;}
+#login p{ position:absolute; top:65%; left:1%; font-size:.8em; letter-spacing:2px;}
+#btn{ width:25%; height:12%; margin:7em auto; }
+#btn input{ width:100%; height:100%; border:2px solid #B89F7A; font-size:.9em; font-weight:bold;
+color:#B89F7A; background-color:transparent; transition:all .5s;}
+#btn input:hover{ background-color:#B89F7A; color:#FFF; }
+#login>a{ float:right; margin-right:2%;  }
+#login>a:link,#login>a:visited{ color:#09C;}
+#login a:hover {color:#399; text-decoration:underline; }
+
+
+#bottom{ position:absolute; top:62em; width:100%; background:#000; height:8em;  }
+#contend{ position:absolute; width:80%; height:50%; color:#FFF; margin:3em; left:5%; text-align:center; }
+#share{ position:absolute; width:30%; height:50%; color:#FFF; right:.5em; margin-top:3.5em; text-align:center;}
+#cover{ width:100%; height:60%; } 
+#cover ul{ width:80%; height:100%; margin-left:10%; }
+#cover ul li{ float:left; width:20%; height:inherit; cursor:pointer; margin-left:4px;  }
+#back{ position:fixed; width:2.1em; height:2.1em; right:1em; bottom:3%; cursor:pointer;  z-index:99;}
+</style>
+<script src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	var flag=0;
+	
+
+	$("#contain").hover(function(){
+		if(flag==0){ $("#contain").css("box-shadow","0 0 0px 1px #B1B1B1"); }
+			},function(){
+		if(flag==0){ $("#contain").css("box-shadow","none"); }
+			});
+
+
+	
+	$("#contain input").focus(function(){
+			$("#contain").css("box-shadow","0 0 0px 1px #B89F7A");
+			flag=1;
+		});
+		
+		$("#contain input").blur(function(){
+			$("#contain").css("box-shadow","none");
+		});
+	
+
+	$("#contain1").hover(function(){
+		if(flag==0){ $("#contain1").css("box-shadow","0 0 0px 1px #B1B1B1"); }
+			},function(){
+		if(flag==0){ $("#contain1").css("box-shadow","none"); }
+			});
+
+
+	
+	$("#contain1 input").focus(function(){
+			$("#contain1").css("box-shadow","0 0 0px 1px #B89F7A");
+			flag=1;
+		});
+		
+		$("#contain1 input").blur(function(){
+			$("#contain1").css("box-shadow","none");
+		});
+	
+	});
+</script>
+
+</head>
+
+<body>
+
+<div id="header">
+<div id="logo"></div>
+<div id="item"><p>披萨的星球<br><a href="login.html">登录</a>或<a href="registered.html">注册</a></p></div>
+</div>
+
+<div id="nav" align="center">
+<div class="nav-list">
+<ul>
+<li><a href="index.html">主页</a></li>
+<li><a href="service.html">服务</a></li>
+<li><a href="menu.html">菜谱</a></li>
+<li><a href="join.html">关于加盟</a></li>
+<li><a href="contact.html">联系我们</a></li>
+</ul>
+</div>
+</div>
+
+<div id="main">
+
+<div id="text">
+<span>登录披萨星球</span>
+<hr style="width:10em; color:#ECECEC;" /> 
+<p>用您的用户名和密码登录。没有帐户？<a href="registered.html">点击注册</a></p>
+</div>
+
+<div id="login">
+<form action="#" method="post">
+
+<div id="item01">
+用户名
+<div id="contain" align="center">
+<input type="text" id="name" name="name">
+</div>
+</div>
+
+<div id="item01">
+密码
+<div id="contain1" align="center">
+<input type="password" id="psw" name="psw">
+</div>
+<br><a href="#">忘记密码？ </a>
+</div>
+
+<p><input type="checkbox" name="checkbox" id="checkbox">&nbsp;下次自动登录</p>
+
+<div id="btn"><input type="submit" id="submit" value="登录"></div>
+</form>
+<a href="ManageLogin.html">管理员登录</a>
+</div>
+</div>
+
+
+<div id="back"><a href="#"><img src="images/back.png"></a></div>
+
+<div id="bottom">
+
+<div id="contend">My_Web © 2016 All rights Reserved | Design by  李家鸿</div>
+
+<div id="share">
+<div id="cover">
+<ul>
+
+<li>
+<a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank">
+<img src="images/sj.png"></a>
+</li> 
+
+<li>
+<a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank">
+<img src="images/tb.png"></a>
+</li> 
+
+<li>
+<a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank">
+<img src="images/wb.png"></a>
+</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

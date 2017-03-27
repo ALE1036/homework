@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>披萨星球</title>
+<style type="text/css">
+
+*{ margin:0; padding:0; list-style:none; text-decoration:none; font:normal 100% Arial,sans-serif; font-size:1em;}
+body{ background:#FFFDEA; }
+
+#header{ position:absolute; top:0px; width:100%; height:13em; background:url(images/aa12.png) no-repeat; background-size:cover; background-position:center;}
+#logo{ position:relative; margin-left:50px; margin-top:20px; width:15%; height:75%; background:url(images/logo03.png) no-repeat; background-size:contain; }
+#item{ position:relative; margin-right:3em; margin-top:-150px; width:25%; height:60%; text-align:right; float:right;}
+#item p{ position:relative; margin-top:2%; color:#fff; font-size:1.2em;  }
+#item p:hover{ color:#CCC;}
+#item a:link,#item a:visited{ color:#FF9;}
+#item a:hover {color:#FC0; text-decoration:underline;}
+
+#nav{ position:absolute; top:4em; width:50%; height:3.8em; left:25%; z-index:4; }
+.nav-list{ width:100%; height:inherit;}
+.nav-list ul{ list-style:none; text-decoration:none; width:90%; height:inherit;}
+.nav-list ul li{ float:left; border:2px solid #F00; width:19%; height:inherit; line-height:3.7em; background-color:transparent; transition:all .5s; cursor:pointer; border-right:none;}
+.nav-list ul li:last-child{ border-right:2px solid #F00; }
+.nav-list a:link,.nav-list a:visited{ color:#FFF;}
+.nav-list ul li:hover{ background-color:#0D0D0D;}
+#on{  background:#0D0D0D;}
+
+#main{ position:absolute; left:5%; top:15em; width:90%; height:42em; }
+#main div{ background:rgba(247,247,247,.5); border-radius:8px; } 
+#te{ width:65%; height:12em; margin:2em; }
+#te div{ float:left; margin-left:.5em;}
+#te #intr{ width:30%; height:100%; background:url(images/a5.jpg) no-repeat; background-size:cover; background-position:center;}
+#te #text{ width:65%; height:100%; font-size:.9em; color:#333; text-align:center; letter-spacing:1px;}
+#te span{ font-size:1.8em; letter-spacing:5px;}
+#te hr{ width:20em; height:1px; border:none; border-top:1px solid #555555; margin:1px auto;} 
+
+#info{ width:65%; height:22em; margin:2em; font-size:.9em; color:#333; text-align:left; letter-spacing:1px;}
+#info span{ font-size:1.1em; font-weight:bold; margin-left:6px; }
+#info hr{ width:85%; height:1px;border:none;border-top:1px dashed #0066CC; margin:0 auto; }
+#text1{ widows:95%; height:45%; margin:1em auto; margin-left:5px;}
+#text2{ widows:95%; height:35%; margin:1em auto; margin-left:5px;}
+
+#main #pt{ position:absolute; width:22%; height:30em; float:right; top:2em; right:5%; 
+background:url(images/a28.jpg) no-repeat; background-size:cover; background-position:center;}
+
+#bo{ position:absolute; width:22%; height:5em; margin-top:-3em; right:5%;
+font-size:1.2em; color:#333; letter-spacing:2px; text-align:center; line-height:5em;}
+
+#bottom{ position:absolute; top:60em; width:100%; background:#000; height:8em;  }
+#contend{ position:absolute; width:80%; height:50%; color:#FFF; margin:3em; left:5%; text-align:center; }
+#share{ position:absolute; width:30%; height:50%; color:#FFF; right:.5em; margin-top:3.5em; text-align:center;}
+#cover{ width:100%; height:60%; } 
+#cover ul{ width:80%; height:100%; margin-left:10%; }
+#cover ul li{ float:left; width:20%; height:inherit; cursor:pointer; margin-left:4px;  }
+#back{ position:fixed; width:2.1em; height:2.1em; right:1em; bottom:3%; cursor:pointer;  z-index:99;}
+</style>
+
+</head>
+
+<body>
+
+<div id="header">
+<div id="logo"></div>
+<div id="item"><p>披萨的星球<br><a href="login.html">登录</a>或<a href="registered.html">注册</a></p></div>
+</div>
+
+<div id="nav" align="center">
+<div class="nav-list">
+<ul>
+<li><a href="index.html">主页</a></li>
+<li id="on"><a href="service.html">服务</a></li>
+<li><a href="menu.html">菜谱</a></li>
+<li><a href="join.html">关于加盟</a></li>
+<li><a href="contact.html">联系我们</a></li>
+</ul>
+</div>
+</div>
+
+<div id="main">
+<div id="te">
+  <div id="intr"></div>
+<div id="text"><span>救星护照</span>
+<hr>
+免费权益——<br>
+① 3个月内，到店购买1杯饮料，即可免费获得1份个人装披萨。<br>
+② 每位救星还可携带1位成人及1位儿童享受同等礼遇。即只要一个人有救星护照，并且本人到店，<br>
+就可以附带（1大1小）在（3个月）内，一同享有买饮料免费吃披萨的权益。<br>
+③ 免费获得3罐星球特产“秀逗”及2张零门槛披萨外带劵，到店自提。<br> </div>
+</div>
+
+<div id="info">
+<div id="text1">
+<span>消费对比——</span><br>
+一家3口去“必胜客”要多少钱？饮料+披萨+小吃/沙拉，人均消费70-80元 如果消费包含牛排，人均约100元。
+一家三口来“披萨星球”要多少钱？一人点一杯饮料，每人就可以免费吃一份单人份披萨，人均消费仅25元，加上小吃/沙拉，人均消费40元。
+而且可以中午来、晚上来！3个月内 天天来！（以第一次消费起算）只要多于1次/周的消费频次人均消费就是必胜客的5折以下！
+来的次数越多越划算！除了免费的披萨，还获得星球商城200积分，当现金花！一积分等于一元现金 让你花的实实在在。
+海量民生刚需产品 不怕换不到想要的。优选大牌正品商品 绝对靠谱。
+</div>
+<hr>
+<div id="text2">
+<span>消费体验——</span><br>
+你不但免费享用美食，实惠兑换优质商品，而且还赚了人品——拯救一颗星球。
+每道美食都有故事，造型及食材都有出处，你吃的不是披萨，是传奇，晒的不是美食，是特权。
+这里有免费美食、高逼格的用餐环境，更有创新的服务系统，颠覆传统披萨店的用餐体验。
+通过“披萨星球”APP你可以提前预定用餐时段、选择餐厅座位、与邀请用餐的人一起选定菜品、完成支付，
+入座后，5分钟内上菜。APP的社交板块可以让你找到美食同好，加入不同的星球部落，
+通过不断更新的披萨星球主题游戏、救星排行榜赚星币获得星球主题商品。
+
+</div>
+</div>
+
+<div id="pt"></div>
+
+<div id="bo">赶快来办理服务吧！</div>
+</div>
+
+
+<div id="back"><a href="#"><img src="images/back.png"></a></div>
+
+<div id="bottom">
+
+<div id="contend">My_Web © 2016 All rights Reserved | Design by  李家鸿</div>
+
+<div id="share">
+<div id="cover">
+<ul>
+
+<li>
+<a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank">
+<img src="images/sj.png"></a>
+</li> 
+
+<li>
+<a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank">
+<img src="images/tb.png"></a>
+</li> 
+
+<li>
+<a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank">
+<img src="images/wb.png"></a>
+</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

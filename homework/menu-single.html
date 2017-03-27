@@ -1,0 +1,240 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>披萨星球</title>
+<style type="text/css">
+
+*{ margin:0; padding:0; list-style:none; text-decoration:none; font:normal 100% Arial,sans-serif; font-size:1em;}
+body{ background:#FFFDEA; }
+
+#header{ position:absolute; top:0px; width:100%; height:13em; background:url(images/aa12.png) no-repeat; background-size:cover; background-position:center;}
+#logo{ position:relative; margin-left:50px; margin-top:20px; width:15%; height:75%; background:url(images/logo03.png) no-repeat; background-size:contain;}
+#item{ position:relative; margin-right:3em; margin-top:-150px; width:25%; height:60%; text-align:right; float:right;}
+#item p{ position:relative; margin-top:2%; color:#fff; font-size:1.2em;  }
+#item p:hover{ color:#CCC;}
+#item a:link,#item a:visited{ color:#FF9;}
+#item a:hover {color:#FC0; text-decoration:underline;}	
+
+#nav{ position:absolute; top:4em; width:50%; height:3.8em; left:25%; z-index:4; }
+.nav-list{ width:100%; height:inherit;}
+.nav-list ul{ list-style:none; text-decoration:none; width:90%; height:inherit;}
+.nav-list ul li{ float:left; border:2px solid #F00; width:19%; height:inherit; line-height:3.7em; background-color:transparent; transition:all .5s; cursor:pointer; border-right:none;}
+.nav-list ul li:last-child{ border-right:2px solid #F00; }
+.nav-list a:link,.nav-list a:visited{ color:#FFF;}
+.nav-list ul li:hover{ background-color:#0D0D0D;}
+#on{  background:#0D0D0D;}
+
+#main{ position:absolute; width:100%; height:32em; top:15em;}
+#single{ width:80%; height:70%; margin:3em auto; }
+#single div{ width:30%; height:80%; float:left; }
+#single span{ color:#BABE25; font-size:1.8em; letter-spacing:5px; margin-left:.1em;}
+#single p{ color:#333; font-size:.9em; letter-spacing:1px;  }
+
+#tag{  width:80%; height:6em; margin:2.5em auto; border-top:1px solid #CCC; border-bottom:1px solid #CCC; font-size:14px; }
+#tag #stp{ width:100%; height:50%; border-bottom:1px solid #CCC; }
+#tag img{ position:relative; top:20%; }
+#tag span{ margin-left:2%;}
+#tag span p{ margin:-10px; margin-left:4%;}
+
+#menu{ position:absolute; top:51em; width:100%; height:28em; overflow:hidden; background:#FEFEFE; z-index:4;}
+#menu-list{ position:absolute;  height:inherit; color:#333; font-size:1.5em; font-weight:bold; letter-spacing:3px;}
+#menu-list div{ float: left;  position:relative;}
+#menu-list div ul{ width:80%; height:90%; z-index:5;}
+#menu-list div li{ float:left; width:30%; height:90%; margin-left:1em; }
+#next1{ position:absolute; width:50px; height:50px; border:none; border-radius:4px; right:2em; top:45%; opacity:.7; background:url(images/next1.png) no-repeat; background-size:contain; cursor:pointer; z-index:9;}
+#prev1{ position:absolute; width:50px; height:50px; border:none; border-radius:4px; left:2em; top:45%; opacity:.7; background:url(images/prve1.png) no-repeat; background-size:contain; cursor:pointer; z-index:9;}
+
+
+#bottom{ position:absolute; top:80em; width:100%; background:#000; height:8em;  }
+#contend{ position:absolute; width:80%; height:50%; color:#FFF; margin:3em; left:5%; text-align:center; }
+#share{ position:absolute; width:30%; height:50%; color:#FFF; right:.5em; margin-top:3.5em; text-align:center;}
+#cover{ width:100%; height:60%; } 
+#cover ul{ width:80%; height:100%; margin-left:10%; }
+#cover ul li{ float:left; width:20%; height:inherit; cursor:pointer; margin-left:4px;  }
+#back{ position:fixed; width:2.1em; height:2.1em; right:1em; bottom:3%; cursor:pointer;  z-index:99;}
+</style>
+
+<script src="file:///D|/前端站点区/期末作业/js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	var mh = parseInt($("#menu").css("height"));
+     var len = 2;
+	 var interval = 12000;
+	 var tiemer1;
+	 var menu_list = $("#menu-list");
+	 ws=screen.width;
+	 hs=screen.height;
+	 wa=screen.availWidth;
+	 ha=screen.availHeight;
+	 var k = wa*5+"px";
+	
+	 menu_list.css("left",-wa);
+	 menu_list.css("width",k);
+	 $("#menu-list>div").css("width",wa);
+	 $("#menu-list>div").css("height",mh);
+	
+	
+	   function animate (offset) {
+                var left = parseInt(menu_list.css('left')) + offset;
+                if (offset>0) {
+                    offset = '+=' + offset;
+                }
+                else {
+                    offset = '-=' + Math.abs(offset);
+                }    //先对offset参数进行判断，大于0就叠加否则就减少
+				
+                menu_list.animate({'left': offset}, 600, function () {
+                    if(left > -wa/3){
+                        menu_list.css('left', -wa * len);
+                    }
+                    if(left < (-wa * len) ) {
+                        menu_list.css('left', -wa);
+                    }
+                });
+            }
+			
+			 $("#next1").bind('click', function () {
+                if (menu_list.is(':animated')) {
+                    return;
+                }
+
+                animate(-wa);      
+            });
+
+            $("#prev1").bind('click', function () {
+                if (menu_list.is(':animated')) {
+                    return;
+                }
+
+                animate(wa); 
+            });
+
+	       function play1() {
+                timer1 = setTimeout(function () {
+                   $("#next1").trigger('click');
+                    play1();
+                }, interval);
+            }
+            function stop1() {
+                clearTimeout(timer1);
+            }
+
+            play1();
+			
+			$("#menu").hover(stop1(), play1());
+	
+	});
+</script>
+</head>
+
+<body>
+
+<div id="header">
+<div id="logo"></div>
+<div id="item"><p>披萨的星球<br><a href="#">登录</a>或<a href="#">注册</a></p></div>
+</div>
+
+<div id="nav" align="center">
+<div class="nav-list">
+<ul>
+<li><a href="index.html">主页</a></li>
+<li><a href="service.html">服务</a></li>
+<li id="on"><a href="menu.html">菜谱</a></li>
+<li><a href="join.html">关于加盟</a></li>
+<li><a href="contact.html">联系我们</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="main">
+
+<div id="single">
+<div style="background:url(images/a21.jpg) no-repeat; background-size:contain;"></div>
+<span>菜式名--黑火鸭胸</span>
+<p>以下是一段排版用的文本：Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo, in ven e natis purus pretium sit amet. Praesent lectus tortor, tincidu nt in consectetur vestibulum, ultrices nec neque. Praesent nec sagittis mauris. Fusce convallis nunc neque. Integer egestas aliquam interdum. Nulla ante diam, interdum nec tempus eu, feugiat vel erat. Integer aliquam mi quis accum san porta. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum. Integer fring illa leo porttitor, ultrices quam non, lobortis ligula. Aliquam vel consequat arcu. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum. Integer fring illa leo porttitor, ultrices quam non, lobortis ligula. Aliquam vel consequat arcu. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum.Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo, in ven e natis purus pretium sit amet. Praesent lectus tortor, tincidu nt in consectetur vestibulum, ultrices nec neque. Praesent nec sagittis mauris. Fusce convallis nunc neque. Integer egestas aliquam interdum. Nulla ante diam, interdum nec tempus eu, feugiat vel erat. Integer aliquam mi quis accum san porta. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum. obortis ligula. Aliquam vel consequat arcu. Quisque nec turpis nisi. Proin lobortis nisl ut orci euismod, et lobortis est scelerisque. Sed eget volutpat ipsum.Cras consequat iaculis lorem, id vehicula erat mattis quis. Vivamus laoreet velit justo, in ven e natis purus pretium sit amet.</p>
+</div>
+
+<div id="tag">
+<div id="stp">
+<span><img src="images/tag1.png"> 2016.06.24</span> 
+<span><img src="images/tag2.png">厨师</span> 
+<span style="float:right; margin-right:.2em; margin-top:.5%;"><img src="images/tag4.png">编辑</span>
+</div>
+<span><img src="images/tag3.png">
+<p>黑火山系列 <img src="images/tag5.png" width="20" height="22"> 暂无标签</p>
+</span>
+
+</div>
+
+</div>
+
+
+<div id="menu">
+
+<div id="menu-list">
+<div align="center">相关菜式<br><br><ul>
+<li style="background:url(images/menu4.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu5.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu6.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+</ul></div>
+<div align="center">相关菜式<br><br><ul>
+<li style="background:url(images/menu1.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu2.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu3.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+</ul></div>
+<div align="center">相关菜式<br><br><ul>
+<li style="background:url(images/menu4.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu5.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu6.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+</ul></div>
+<div align="center">相关菜式<br><br><ul>
+<li style="background:url(images/menu1.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu2.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+<li style="background:url(images/menu3.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+</ul></div>
+
+</div>
+
+<input type="button" id="prev1" >
+<input type="button" id="next1" >
+
+</div>
+
+
+<div id="back"><a href="#"><img src="images/back.png"></a></div>
+
+<div id="bottom">
+
+<div id="contend">My_Web © 2016 All rights Reserved | Design by  李家鸿</div>
+
+<div id="share">
+<div id="cover">
+<ul>
+
+<li>
+<a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank">
+<img src="images/sj.png"></a>
+</li> 
+
+<li>
+<a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank">
+<img src="images/tb.png"></a>
+</li> 
+
+<li>
+<a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank">
+<img src="images/wb.png"></a>
+</li>
+
+</ul>
+</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

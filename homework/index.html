@@ -1,0 +1,1010 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>披萨星球</title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        font: normal 100% Arial, sans-serif;
+        font-size: 1em;
+    }
+    
+    body {
+        background: #FFFDEA;
+    }
+    
+    #header {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 13em;
+        background: url(images/aa12.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    #logo {
+        position: relative;
+        margin-left: 50px;
+        margin-top: 20px;
+        width: 15%;
+        height: 75%;
+        background: url(images/logo03.png) no-repeat;
+        background-size: contain;
+    }
+    
+    #item {
+        position: relative;
+        margin-right: 3em;
+        margin-top: -150px;
+        width: 25%;
+        height: 60%;
+        text-align: right;
+        float: right;
+    }
+    
+    #item p {
+        position: relative;
+        margin-top: 2%;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    
+    #item p:hover {
+        color: #CCC;
+    }
+    
+    #item a:link,
+    #item a:visited {
+        color: #FF9;
+    }
+    
+    #item a:hover {
+        color: #FC0;
+        text-decoration: underline;
+    }
+    
+    #focus-pic {
+        position: absolute;
+        top: 14em;
+        width: 100%;
+        height: 44em;
+        z-index: 3
+    }
+    
+    #list {
+        margin: 0px auto;
+        width: inherit;
+        height: inherit;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #pic {
+        margin: 0px;
+        padding: 0px;
+        width: inherit;
+        overflow: hidden;
+        list-style: none;
+    }
+    
+    #pic img {
+        width: inherit;
+        height: inherit;
+    }
+    
+    .bar {
+        margin: 0px;
+        padding: 0px;
+        left: 50%;
+        bottom: 30px;
+        position: absolute;
+        width: 100%;
+        height: 10px;
+    }
+    
+    .bar li {
+        background: #999;
+        margin: 5px;
+        width: 8px;
+        height: 8px;
+        float: left;
+        opacity: .8;
+        border: 2px solid #999;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    
+    .bar li:hover {
+        background: #6F6;
+    }
+    
+    #at {
+        display: block;
+        background: #6F6;
+    }
+    
+    .arrow {
+        cursor: pointer;
+        display: none;
+        line-height: 2.5em;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        width: 2.5em;
+        height: 2.5em;
+        position: absolute;
+        z-index: 2;
+        opacity: .3;
+        color: #FFF;
+        background: #333;
+    }
+    
+    .arrow:hover {
+        opacity: .7;
+    }
+    
+    #focus-pic:hover .arrow {
+        display: block;
+    }
+    
+    #prev {
+        left: 0px;
+        top: 50%;
+        border-radius: 2px;
+    }
+    
+    #next {
+        right: 0px;
+        top: 50%;
+        border-radius: 2px;
+    }
+    
+    #nav {
+        position: absolute;
+        top: 17em;
+        width: 100%;
+        height: 3.8em;
+        z-index: 4;
+    }
+    
+    .nav-list {
+        width: 51%;
+        height: inherit;
+    }
+    
+    .nav-list ul {
+        list-style: none;
+        text-decoration: none;
+        width: 80%;
+        height: inherit;
+    }
+    
+    .nav-list ul li {
+        float: left;
+        border: 2px solid #C69C30;
+        width: 19%;
+        display: block;
+        height: inherit;
+        line-height: 3.7em;
+        background-color: transparent;
+        transition: all .5s;
+        cursor: pointer;
+        border-right: none;
+    }
+    
+    .nav-list ul li:last-child {
+        border-right: 2px solid #C69C30;
+    }
+    
+    .nav-list a:link,
+    .nav-list a:visited {
+        color: #FFF;
+    }
+    
+    .nav-list ul li:hover {
+        background-color: #0D0D0D;
+    }
+    
+    #on {
+        background: #0D0D0D;
+    }
+    
+    #theme {
+        position: absolute;
+        top: 60em;
+        width: 100%;
+        height: 35em;
+        overflow: hidden;
+    }
+    
+    #logo2 {
+        width: 6.2em;
+        height: 6.2em;
+        margin: -18em -2em;
+        background: url(images/logo03.png) no-repeat;
+        background-size: contain;
+    }
+    
+    #content {
+        width: inherit;
+        height: inherit;
+        background: url(images/bg2.jpg) no-repeat;
+        background-size: cover;
+        border: 2px solid #000;
+    }
+    
+    #text {
+        width: 50%;
+        height: inherit;
+        color: #FFF;
+        margin: 5em 3em;
+        font-size: 1.2em;
+        text-align: center
+    }
+    
+    #text span {
+        color: #F60;
+        font-size: 1.9em;
+        font-weight: bold;
+        letter-spacing: 8px;
+    }
+    
+    #text p {
+        margin: 5px;
+    }
+    
+    #text p span {
+        font-size: 1.2em;
+        color: #FF8040;
+    }
+    
+    #menu {
+        position: absolute;
+        top: 99em;
+        width: 100%;
+        height: 28em;
+        overflow: hidden;
+        z-index: 4;
+    }
+    
+    #menu-list {
+        position: absolute;
+        height: inherit;
+        color: #333;
+        font-size: 1.5em;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+    
+    #menu-list div {
+        float: left;
+        position: relative;
+    }
+    
+    #menu-list div ul {
+        width: 80%;
+        height: 90%;
+        z-index: 5;
+    }
+    
+    #menu-list div li {
+        float: left;
+        width: 30%;
+        height: 90%;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+    
+    #next1 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 4px;
+        right: 2em;
+        top: 45%;
+        opacity: .7;
+        background: url(images/next1.png) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        z-index: 9;
+    }
+    
+    #prev1 {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 4px;
+        left: 2em;
+        top: 45%;
+        opacity: .7;
+        background: url(images/prve1.png) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        z-index: 9;
+    }
+    
+    #introduce {
+        position: absolute;
+        width: 100%;
+        height: 35em;
+        top: 130em;
+        perspective: 2200px;
+        overflow: hidden;
+    }
+    
+    #contents {
+        width: inherit;
+        height: inherit;
+        transform-style: preserve-3d;
+        z-index: 1;
+    }
+    
+    #contents div {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        float: left;
+        text-align: center;
+    }
+    
+    #introduce .ars {
+        position: absolute;
+        width: 4.3em;
+        height: 5.6em;
+        color: #FFF;
+        top: 45%;
+        z-index: 9;
+    }
+    
+    .mbtn {
+        position: absolute;
+        width: 60%;
+        height: 1.5em;
+        bottom: 1%;
+        left: 45%;
+        z-index: 9;
+    }
+    
+    .mbtn ul {
+        width: inherit;
+        height: inherit;
+    }
+    
+    .mbtn ul li {
+        float: left;
+        margin: .3em;
+        background: #333;
+        width: 8px;
+        height: 8px;
+        float: left;
+        opacity: .8;
+        border: 2px solid #999;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    
+    .mbtn li:hover {
+        background: #6F6;
+    }
+    
+    #next2 {
+        right: -5em;
+        background: url(images/next.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        cursor: pointer;
+        opacity: .2;
+        transition: all .6s;
+        z-index: 10;
+    }
+    
+    #next2 div {
+        width: inherit;
+        height: inherit;
+        background: rgba(0, 0, 0, 0);
+        border-radius: 3px;
+        z-index: 1;
+    }
+    
+    #next2:hover div {
+        background: rgba(0, 0, 0, .2);
+    }
+    
+    #introduce:hover #next2 {
+        right: 0.1em;
+        opacity: 1;
+    }
+    
+    #prev2 {
+        left: -5em;
+        background: url(images/prve.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        cursor: pointer;
+        opacity: .2;
+        transition: all .6s;
+    }
+    
+    #prev2 div {
+        width: inherit;
+        height: inherit;
+        background: rgba(0, 0, 0, .0);
+        border-radius: 3px;
+    }
+    
+    #prev2:hover div {
+        background: rgba(0, 0, 0, .2);
+    }
+    
+    #introduce:hover #prev2 {
+        left: 0.1em;
+        opacity: 1;
+    }
+    
+    #text1 {
+        width: inherit;
+        height: inherit;
+        margin: 6em auto;
+        line-height: 3em;
+        letter-spacing: 2px;
+        text-align: center;
+        color: #F0F0F0;
+        font-size: 1.3em;
+        font-weight: bolder;
+    }
+    
+    #text1 span {
+        font-size: 1.8em;
+        color: #FF9;
+        letter-spacing: 5px;
+    }
+    
+    #bottom {
+        position: absolute;
+        top: 168em;
+        width: 100%;
+        background: #000;
+        height: 8em;
+    }
+    
+    #contend {
+        position: absolute;
+        width: 80%;
+        height: 50%;
+        color: #FFF;
+        margin: 3em;
+        left: 5%;
+        text-align: center;
+    }
+    
+    #share {
+        position: absolute;
+        width: 30%;
+        height: 50%;
+        color: #FFF;
+        right: .5em;
+        margin-top: 3.5em;
+        text-align: center;
+    }
+    
+    #cover {
+        width: 100%;
+        height: 60%;
+    }
+    
+    #cover ul {
+        width: 80%;
+        height: 100%;
+        margin-left: 10%;
+    }
+    
+    #cover ul li {
+        float: left;
+        width: 20%;
+        height: inherit;
+        cursor: pointer;
+        margin-left: 4px;
+    }
+    
+    #back {
+        position: fixed;
+        width: 2.1em;
+        height: 2.1em;
+        right: 1em;
+        bottom: 3%;
+        cursor: pointer;
+        z-index: 99;
+    }
+    </style>
+    <link href="css/animation.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        var tiemer;
+        var i = 0;
+        var j = -1;
+        var flag = 0;
+
+        $(".nav-list li").click(function() {
+            var index = $(this).index();
+            switch (index) {
+                case 0:
+                    //	window.open('index.html');
+                    break;
+                case 1:
+                    window.location.href = 'service.html';
+                    break;
+                case 2:
+                    window.location.href = 'menu.html';
+                    break;
+                case 3:
+                    window.location.href = 'join.html';
+                    break;
+                case 4:
+                    window.location.href = 'contact.html';
+                    break;
+                default:
+                    break;
+            }
+        });
+
+
+        $("#prev").click(function() {
+            i--;
+            if (i == -1) {
+                i = 2;
+            }
+            $("#pic li").filter(":visible").fadeOut(500, function() {
+                $("#pic li").eq(i).fadeIn(500);
+            });
+            $(".bar li").removeAttr("id").eq(i).attr("id", "at");
+        });
+
+        $("#next").click(function() {
+            if (i > 1) {
+                i = 0;
+            } else {
+                i++;
+            }
+            $("#pic li").filter(":visible").fadeOut(500, function() {
+                $("#pic li").eq(i).fadeIn(500);
+            });
+            $(".bar li").removeAttr("id").eq(i).attr("id", "at");
+        });
+
+        $(".bar li").click(function() {
+            var index = $(this).index();
+            if (i != index) {
+                $("#pic li").filter(":visible").fadeOut(500, function() {
+                    $("#pic li").eq(index).fadeIn(500);
+                });
+                $(".bar li").removeAttr("id").eq(index).attr("id", "at");
+            }
+            i = index;
+        });
+
+        function play() {
+            timer = setTimeout(function() {
+                $("#next").trigger('click');
+                play();
+            }, 8000);
+        }
+
+        function stop() {
+            clearTimeout(timer);
+        }
+
+        play();
+
+        $("#focus-pic").hover(function() {
+            stop()
+        }, function() {
+            play();
+        });
+
+
+        var mh = parseInt($("#menu").css("height"));
+        var len = 2;
+        var interval = 12000;
+        var tiemer1;
+        var menu_list = $("#menu-list");
+        ws = screen.width;
+        hs = screen.height;
+        wa = screen.availWidth;
+        ha = screen.availHeight;
+        var k = wa * 5 + "px";
+
+        menu_list.css("left", -wa);
+        menu_list.css("width", k);
+        $("#menu-list>div").css("width", wa);
+        $("#menu-list>div").css("height", mh);
+
+
+        function animate(offset) {
+            var left = parseInt(menu_list.css('left')) + offset;
+            if (offset > 0) {
+                offset = '+=' + offset;
+            } else {
+                offset = '-=' + Math.abs(offset);
+            } //先对offset参数进行判断，大于0就叠加否则就减少
+
+            menu_list.animate({
+                'left': offset
+            }, 600, function() {
+                if (left > -wa / 3) {
+                    menu_list.css('left', -wa * len);
+                }
+                if (left < (-wa * len)) {
+                    menu_list.css('left', -wa);
+                }
+            });
+        }
+
+
+        $("#menu-list li").click(function() {
+            window.open('menu-single.html');
+        });
+
+
+        $("#next1").bind('click', function() {
+            if (menu_list.is(':animated')) {
+                return;
+            }
+
+            animate(-wa);
+        });
+
+        $("#prev1").bind('click', function() {
+            if (menu_list.is(':animated')) {
+                return;
+            }
+
+            animate(wa);
+        });
+
+        function play1() {
+            timer1 = setTimeout(function() {
+                $("#next1").trigger('click');
+                play1();
+            }, interval);
+        }
+
+        function stop1() {
+            clearTimeout(timer1);
+        }
+
+        play1();
+
+        $("#menu").hover(stop1(), play1());
+
+
+        $("#next2").click(function() {
+
+            var outclass = ["moveToRightEasing", "scaleDown", "moveToLeftEasing", "moveToTop", "rotateOutNewspaper", "rotateFall"],
+                inclass = ["moveFromLeft", "scaleUpDown", "moveFromRight", "scaleUp", "rotateInNewspaper", "scaleUp"],
+                bbb = ["SlideOut", "SlideIn"];
+            if (flag != 0) {
+                j = flag;
+                flag = 0;
+            } else if (j == 6) {
+                j = 0;
+            } else {
+                j++;
+            }
+
+            var a = j + 1;
+            if (a > 6) {
+                a = 0;
+            }
+
+
+            console.log("i = " + j); //outclass
+            console.log("a = " + a); //inclass
+
+            if (j == 6 && a == 0) {
+                $("#contents>div").removeAttr("class").css("display", "none").eq(i).css("display", "block");
+                $("#test" + j).css({
+                    "z-index": "3",
+                    "display": "block"
+                }).addClass(bbb[0]);
+                $("#test" + a).css({
+                    "z-index": "2",
+                    "display": "block"
+                }).addClass(bbb[1]);;
+            } else {
+                $("#contents>div").removeAttr("class").css("display", "none").eq(j).
+                addClass(outclass[j]).css({
+                    "z-index": "6",
+                    "display": "block"
+                });
+                $("#contents>div").eq(a).addClass(inclass[j]).css({
+                    "z-index": "5",
+                    "display": "block"
+                });
+            }
+
+            flag = a;
+            $(".mbtn ul li").removeAttr("id").eq(a).attr("id", "at");
+        });
+
+
+
+        $("#prev2").click(function() {
+
+            var outclass1 = ["moveToLeftEasing", "scaleDownUp", "moveToRightEasing", "moveToBottom", "rotateOutNewspaper", "rotatePushTop"],
+                inclass1 = ["moveFromRight", "scaleUp1", "moveFromLeft", "scaleUp", "rotateInNewspaper", "rotatePullBottom"];
+            var aaa = ["rotateSidesOut", "rotateSidesIn"];
+
+            if (j == -1) {
+                j = 6;
+            }
+            if (flag != 0) {
+                j = flag - 1;
+                flag = 0;
+            }
+
+            var b = j + 1;
+            if (b == 7) {
+                b = 0;
+            }
+
+
+            console.log("b = " + b); //outclass
+            console.log("j = " + j); //inclass
+            console.log("flag = " + flag);
+
+            if (j == 6 && b == 0) {
+                $("#contents>div").removeAttr("class").css("display", "none");
+                $("#test" + j).css({
+                    "z-index": "3",
+                    "display": "block"
+                }).addClass(aaa[1]);
+                $("#test" + b).css({
+                    "z-index": "2",
+                    "display": "block"
+                }).addClass(aaa[0]);;
+            } else {
+                $("#contents>div").removeAttr("class").css("display", "none").eq(b).
+                addClass(outclass1[j]).css({
+                    "z-index": "6",
+                    "display": "block"
+                });
+                $("#contents>div").eq(j).addClass(inclass1[j]).css({
+                    "z-index": "5",
+                    "display": "block"
+                });
+            }
+
+            $(".mbtn ul li").removeAttr("id").eq(j).attr("id", "at");
+            j--;
+
+        });
+
+        $(".mbtn ul li").click(function() {
+            var index = $(this).index();
+            var cc = ["flipOutLeft", "flipInRight", "flipOutRight", "flipInLeft"];
+            console.log("index : " + index);
+
+            if (j == -1) {
+                j = 0;
+            }
+
+
+            if (index - flag > 0) {
+                $("#contents>div").removeAttr("class").css("display", "none").eq(flag).
+                addClass(cc[0]).css({
+                    "z-index": "6",
+                    "display": "block"
+                });
+                $("#contents>div").eq(index).addClass(cc[1]).css({
+                    "z-index": "5",
+                    "display": "block"
+                });
+            }
+            if (index - flag < 0) {
+                $("#contents>div").removeAttr("class").css("display", "none").eq(flag).
+                addClass(cc[2]).css({
+                    "z-index": "6",
+                    "display": "block"
+                });
+                $("#contents>div").eq(index).addClass(cc[3]).css({
+                    "z-index": "5",
+                    "display": "block"
+                });
+            }
+
+            $(".mbtn ul li").removeAttr("id").eq(index).attr("id", "at");
+
+            flag = index;
+
+
+        });
+
+
+
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo"></div>
+        <div id="item">
+            <p>披萨的星球
+                <br><a href="login.html">登录</a>或<a href="registered.html">注册</a></p>
+        </div>
+    </div>
+    <div id="focus-pic">
+        <div id="list">
+            <ul id="pic">
+                <li><img src="images/1.jpg" /></li>
+                <li><img src="images/2.jpg" /></li>
+                <li><img src="images/3.jpg" /></li>
+            </ul>
+            <ul class="bar">
+                <li id="at"></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+            <a href="javascript:;" id="next" class="arrow">&gt;</a>
+        </div>
+    </div>
+    <div id="nav" align="center">
+        <div class="nav-list">
+            <ul>
+                <li id="on"><a href="index.html">主页</a></li>
+                <li><a href="service.html">服务</a></li>
+                <li><a href="menu.html">菜谱</a></li>
+                <li><a href="join.html">关于加盟</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="theme">
+        <div id="content">
+            <div id="text">
+                <span>品牌故事</span>
+                <p>
+                    <span><em>披萨星球</em></span>——有爱的美食星球，星球上的任何东西都可以吃。千万年来，五大部落互助互爱，充满爱心的正能量，让星球母亲树生生不息，结出各种美味物种。
+                    <br> 不久之前，披萨星球遭受一颗不明来历的陨石撞击，形成持续的海啸、飓风，造成灾难性饮料风暴。星球水位持续上升、陆地逐步减小，被飓风卷上星球低空层的美味食材，遮挡了阳光，披萨星球美味物种生存告急。
+                    <br> 披萨星球长老会决定向银河系发射披萨星舰，向有爱心的地球吃货求救。 披萨公主带着星球的希望——母亲树的精元，驾着披萨星舰，向地球光速驶来。
+                    <br>
+                </p>
+                <div id="logo2"></div>
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+        <div id="menu-list">
+            <div align="center">菜式预览
+                <br>
+                <br>
+                <ul>
+                    <li style="background:url(images/menu4.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu5.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu6.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                </ul>
+            </div>
+            <div align="center">菜式预览
+                <br>
+                <br>
+                <ul>
+                    <li style="background:url(images/menu1.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu2.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu3.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                </ul>
+            </div>
+            <div align="center">菜式预览
+                <br>
+                <br>
+                <ul>
+                    <li style="background:url(images/menu4.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu5.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu6.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                </ul>
+            </div>
+            <div align="center">菜式预览
+                <br>
+                <br>
+                <ul>
+                    <li style="background:url(images/menu1.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu2.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                    <li style="background:url(images/menu3.jpg) no-repeat; background-size:contain; background-position:center;"></li>
+                </ul>
+            </div>
+        </div>
+        <input type="button" id="prev1">
+        <input type="button" id="next1">
+    </div>
+    <div id="introduce">
+        <div id="contents">
+            <div id="test0">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test1">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test2">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test3">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test4">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test5">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+            <div id="test6">
+                <div id="text1"><span>餐厅介绍<br></span>这是我们的店面内部的用餐环境，
+                    <br> 设计风格是外星系列，这个我们也可以从店面感受到了，
+                    <br>在这里无论是环境还是菜式都可以令你感受到来自“披萨星球”的异族风情。</div>
+            </div>
+        </div>
+        <div id="next2" class="ars">
+            <div></div>
+        </div>
+        <div id="prev2" class="ars">
+            <div></div>
+        </div>
+        <div class="mbtn">
+            <ul>
+                <li id="at"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div id="back">
+        <a href="#"><img src="images/back.png"></a>
+    </div>
+    <div id="bottom">
+        <div id="contend">My_Web © 2016 All rights Reserved | Design by 李家鸿</div>
+        <div id="share">
+            <div id="cover">
+                <ul>
+                    <li>
+                        <a href="http://www.wandoujia.com/apps/la.ilai.app" target="_blank"><img src="images/sj.png"></a>
+                    </li>
+                    <li>
+                        <a href="http://tieba.baidu.com/f?kw=%E6%8A%AB%E8%90%A8%E6%98%9F%E7%90%83" target="_blank"><img src="images/tb.png"></a>
+                    </li>
+                    <li>
+                        <a href="http://weibo.com/u/5733961587?refer_flag=1001030102_&is_hot=1#_loginLayer_1465557446512" target="_blank"><img src="images/wb.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

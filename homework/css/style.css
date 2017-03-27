@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+#test0{ background:url(../images/aa1.jpg) no-repeat; background-size:cover; background-position:center; z-index:2; }
+#test1{ background:url(../images/aa2.jpg) no-repeat; background-size:cover; background-position:center; }
+#test2{ background:url(../images/aa3.jpg) no-repeat; background-size:cover; background-position:center; }
+#test3{ background:url(../images/aa4.jpg) no-repeat; background-size:cover; background-position:center; }
+#test4{ background:url(../images/aa5.jpg) no-repeat; background-size:cover; background-position:center; }
+#test5{ background:url(../images/aa6.jpg) no-repeat; background-size:cover; background-position:center; }
+#test6{ background:url(../images/aa7.jpg) no-repeat; background-size:cover; background-position:center; }
